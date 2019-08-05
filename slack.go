@@ -119,6 +119,12 @@ func slackLoop(config *config.Config) {
 
 func respond(e *slack.MessageEvent) {
 
+	// Only reply to plain messages (not topic changes, etc.)
+	// Ref: https://api.slack.com/events/message
+	if e.SubType != "" {
+		return
+	}
+
 	// Check if I was tagged
 	botTagged := strings.Contains(e.Msg.Text, botTagString)
 
