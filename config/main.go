@@ -3,7 +3,7 @@ package config
 import (
 	"io/ioutil"
 
-	"github.com/belminf/archie/msgs"
+	"github.com/astoria-arc/archie/msgs"
 	yaml "gopkg.in/yaml.v2"
 )
 

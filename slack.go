@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/belminf/archie/config"
-	"github.com/belminf/archie/msgs"
+	"github.com/astoria-arc/archie/config"
+	"github.com/astoria-arc/archie/msgs"
 
 	"github.com/nlopes/slack"
 )

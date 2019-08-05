@@ -7,7 +7,7 @@ import (
 
 	"github.com/nlopes/slack"
 
-	"github.com/belminf/archie/config"
+	"github.com/astoria-arc/archie/config"
 )
 
 var rtm *slack.RTM

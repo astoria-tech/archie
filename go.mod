@@ -1,4 +1,4 @@
-module github.com/belminf/archie
+module github.com/astoria-arc/archie
 
 go 1.12
 
