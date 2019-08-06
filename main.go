@@ -21,11 +21,17 @@ func main() {
 		os.Exit(-1)
 	}
 
+	// Get config path
+	configPath := os.Getenv("ARCHIE_CONFIG")
+	if configPath == "" {
+		configPath = "config.yaml"
+	}
+
 	// Check if we will be noisy
 	_, slackDebug := os.LookupEnv("ARCHIE_DEBUG")
 
 	//Load config
-	config, err := config.Load("config.yaml")
+	config, err := config.Load(configPath)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
