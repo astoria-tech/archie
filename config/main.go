@@ -9,7 +9,7 @@ import (
 
 //Config configuration for slack bot
 type Config struct {
-	Messages msgs.Messages `yaml:"messages"`
+	Messages msgs.Messages
 }
 
 //Load config
