@@ -7,16 +7,9 @@ import (
 	yaml "gopkg.in/yaml.v2"
 )
 
-//SlackConfig configuration for Slack
-type SlackConfig struct {
-	Token string `yaml:"oauthToken"`
-	Debug bool   `yaml:"debug"`
-}
-
 //Config configuration for slack bot
 type Config struct {
-	Messages    msgs.Messages `yaml:"messages"`
-	SlackConfig SlackConfig   `yaml:"slack"`
+	Messages msgs.Messages `yaml:"messages"`
 }
 
 //Load config

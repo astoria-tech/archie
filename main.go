@@ -14,6 +14,16 @@ var rtm *slack.RTM
 
 func main() {
 
+	// Get slack token
+	slackToken := os.Getenv("ARCHIE_SLACK_TOKEN")
+	if slackToken == "" {
+		fmt.Printf("Error: Requires ARCHIE_SLACK_TOKEN (should be begin with \"xoxb-\")")
+		os.Exit(-1)
+	}
+
+	// Check if we will be noisy
+	_, slackDebug := os.LookupEnv("ARCHIE_DEBUG")
+
 	//Load config
 	config, err := config.Load("config.yaml")
 	if err != nil {
@@ -23,8 +33,8 @@ func main() {
 
 	//Should start with xoxb
 	rtm = slack.New(
-		config.SlackConfig.Token,
-		slack.OptionDebug(config.SlackConfig.Debug),
+		slackToken,
+		slack.OptionDebug(slackDebug),
 		slack.OptionLog(log.New(os.Stdout, "SLACK: ", log.Lshortfile|log.LstdFlags)),
 	).NewRTM()
 
