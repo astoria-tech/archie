@@ -6,6 +6,7 @@ import (
 	"math/rand"
 	"regexp"
 	"strings"
+	"time"
 )
 
 type message struct {
@@ -29,6 +30,10 @@ type Messages map[string]*message
 var (
 	messages *Messages
 )
+
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
 
 //LoadMessages preloads regex for matching
 func LoadMessages(msgs *Messages) {
