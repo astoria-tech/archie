@@ -1,0 +1,53 @@
+messages:
+  greetings:
+    input:
+      - hey
+      - hi
+      - yo
+      - hello
+      - hey there
+    output:
+      - Hello, $YOU.
+      - Yo, yo! How's it hanging $YOU?
+      - Hey there, $YOU!
+      - Sup $YOU?
+      - Nice of you to join us, $YOU.
+  howAreYou:
+    input:
+      - sup
+      - what('s | is |)up
+      - what's going on
+      - how('re| are)? (you|u)( feeling| doing)?
+      - what('re| are)? (you|u) (doing|up to)
+    output:
+      - Living that bot life!
+      - Wishing I was human.
+      - Trying to figure out if Eastoria is a thing.
+      - Looking for a new local bakery.
+      - Reminiscing about the Q train.
+      - Remembering Studio Square.... unfondly.
+  arcSites:
+    input:
+      - ".*arc (web)?sites.*"
+      - ".*our (web)?sites.*"
+      - ".*astoria.app (web)?sites.*"
+      - ".*astoria (web)?sites.*"
+      - ".*urls of our (web)?sites.*"
+      - "(web)?sites"
+      - "urls"
+      - "link(s)?"
+    output:
+      - |
+        Sure, $YOU. Here are the ARC sites I'm aware of:
+        
+        - astoria.app
+        - slack.astoria.app
+        - trains.astoria.app
+        - discuss.astoria.app
+        - meetup.astoria.app
+        - todo.astoria.app
+  unknown:
+    output:
+      - |
+        Huh? IDK what you mean but help me learn, $YOU!
+        https://github.com/astoria-arc/archie/issues/new
